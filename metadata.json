@@ -1,0 +1,8 @@
+{
+  "name": "William Hansan",
+  "description": "William Hansan - Finance and M&A Advisory website",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
