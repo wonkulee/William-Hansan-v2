@@ -1482,13 +1482,13 @@ export default function Home() {
               {/* Blur fade effect */}
               <div 
                 className="absolute inset-0 backdrop-blur-md pointer-events-none" 
-                style={{ maskImage: 'linear-gradient(to right, black 20%, transparent 60%)', WebkitMaskImage: 'linear-gradient(to right, black 20%, transparent 60%)' }} 
+                style={{ maskImage: 'linear-gradient(to right, black 0%, transparent 40%)', WebkitMaskImage: 'linear-gradient(to right, black 0%, transparent 40%)' }} 
               />
               
               {/* White gradient for text contrast */}
-              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 via-30% to-transparent pointer-events-none" />
               
-              <div className="relative z-10 w-full h-full max-w-[1400px] mx-auto flex flex-col justify-center px-6 md:px-12 lg:px-16">
+              <div className="relative z-10 w-full h-full flex flex-col justify-center px-6 md:px-12 lg:px-16">
                 <div className="max-w-xl">
                   <div className="border-l-[3px] border-[#2A3B5C] pl-6 md:pl-8 py-2">
                     <h1 className="text-4xl md:text-5xl lg:text-[56px] font-light tracking-tight text-zinc-900 leading-tight mb-4">
