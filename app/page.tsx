@@ -1468,30 +1468,34 @@ export default function Home() {
           /* HOME PAGE VIEW */
           <>
             {/* 1. Homepage Hero Image */}
-            <section className="relative w-full h-[320px] sm:h-[360px] md:h-[400px] flex items-center overflow-hidden bg-zinc-900 border-b border-zinc-100">
-              <div className="absolute inset-0 w-full h-full">
+            <section className="w-full h-[360px] sm:h-[440px] md:h-[500px] grid grid-cols-1 lg:grid-cols-2 border-b border-zinc-100 bg-[#FAFAFA]">
+              <div className="flex flex-col justify-center px-6 md:px-12 lg:px-24">
+                <div className="border-l-[3px] border-[#2A3B5C] pl-6 md:pl-8 py-2">
+                  <h1 className="text-4xl md:text-5xl lg:text-[56px] font-light tracking-tight text-zinc-900 leading-tight mb-4">
+                    {t.hero.title}
+                  </h1>
+                  <p className="text-sm md:text-base text-zinc-600 font-light tracking-wide leading-relaxed mb-10 max-w-md">
+                    {t.hero.subtitle}
+                  </p>
+                  <button
+                    onClick={() => setActiveTab('services')}
+                    className="inline-flex items-center gap-3 px-6 py-3 bg-[#0a192f] text-white hover:bg-zinc-800 transition-colors duration-300 text-xs uppercase tracking-[0.2em] font-light"
+                  >
+                    <span>Our Services</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+              <div className="hidden lg:block relative w-full h-full">
                 <img
                   src="https://lh3.googleusercontent.com/d/1h6zj5YEY7GhtasK39iZBy0yyhSpovFT8"
                   alt="Seoul City Skyline"
-                  className="w-full h-full object-cover object-center filter brightness-[1.02] contrast-[1.05]"
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[1.05]"
                   referrerPolicy="no-referrer"
                   onError={(e) => {
                     e.currentTarget.src = "https://drive.google.com/uc?export=view&id=1h6zj5YEY7GhtasK39iZBy0yyhSpovFT8";
                   }}
                 />
-                {/* Refined subtle gradient overlay for text legibility while preserving skyline clarity */}
-                <div className="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 via-40% to-transparent pointer-events-none" />
-              </div>
-              
-              <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
-                <div className="border-l-[3px] border-zinc-900 pl-6 md:pl-8 py-1 max-w-2xl backdrop-blur-[2px] bg-white/20 p-4 rounded-r-sm sm:bg-transparent sm:backdrop-blur-none sm:p-0">
-                  <h1 className="text-3xl md:text-5xl lg:text-[50px] font-light tracking-tight text-zinc-900 leading-tight mb-3">
-                    {t.hero.title}
-                  </h1>
-                  <p className="text-xs md:text-sm lg:text-base text-zinc-700 font-normal tracking-wide leading-relaxed">
-                    {t.hero.subtitle}
-                  </p>
-                </div>
               </div>
             </section>
 
@@ -1499,58 +1503,43 @@ export default function Home() {
             <section className="w-full bg-white border-b border-zinc-100 overflow-hidden">
               <div className="w-full grid grid-cols-1 lg:grid-cols-12 min-h-[320px]">
                 {/* Left side: Company Introduction */}
-                <div className="lg:col-span-7 px-6 md:px-12 lg:px-24 py-10 md:py-14 flex flex-col justify-center text-left">
-                  <div className="max-w-3xl">
+                <div className="lg:col-span-5 xl:col-span-4 px-6 md:px-12 lg:px-16 py-10 md:py-16 flex flex-col justify-center text-left">
+                  <div className="max-w-md">
                     <div className="space-y-6 text-zinc-600 leading-[1.85] text-sm md:text-base font-light break-keep">
                       <p>{t.about.p1}</p>
                       <p>{t.about.p2}</p>
                     </div>
-
-                    <div className="mt-8 md:mt-10">
-                      <button
-                        onClick={() => setActiveTab('services')}
-                        className="inline-flex items-center gap-3 px-6 py-3 border border-zinc-900 text-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300 text-xs uppercase tracking-[0.2em] font-light"
-                      >
-                        <span>{t.about.btn}</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
                   </div>
                 </div>
 
-                {/* Right side: CEO Photo with Soft Edge Fade and Quote */}
-                <div className="lg:col-span-5 relative min-h-[280px] lg:min-h-full bg-zinc-900 overflow-hidden">
-                  {/* Background Image of CEO */}
+                {/* Right side: CEO Photo and Quote Overlay */}
+                <div className="lg:col-span-7 xl:col-span-8 relative min-h-[260px] lg:min-h-full overflow-hidden bg-zinc-900">
                   <img
                     src="https://lh3.googleusercontent.com/d/1QL4-mdRZDRBH37aSZdIQpyM1YSdK8rGw"
                     alt="Wonku William Lee - CEO"
-                    className="w-full h-full object-cover object-top filter contrast-[1.05]"
+                    className="absolute inset-0 w-full h-full object-cover object-top filter brightness-[0.85]"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
                       e.currentTarget.src = "https://drive.google.com/uc?export=view&id=1QL4-mdRZDRBH37aSZdIQpyM1YSdK8rGw";
                     }}
                   />
                   
-                  {/* Dark overlay for contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/45 to-zinc-950/20" />
-
-                  {/* Soft fade-to-white gradient along left edge to blend into white background seamlessly */}
-                  <div className="absolute inset-y-0 left-0 w-32 md:w-56 lg:w-72 bg-gradient-to-r from-white via-white/40 via-30% to-transparent hidden lg:block pointer-events-none" />
-
-                  {/* Quote Overlay Content */}
-                  <div className="absolute inset-0 p-8 md:p-10 lg:p-12 flex flex-col justify-end z-10 text-white">
-                    <div className="space-y-4 max-w-lg">
-                      <p className="text-base md:text-lg font-light leading-relaxed italic text-zinc-100 tracking-wide break-keep">
-                        {t.ceoQuote.quote}
-                      </p>
-                      <div className="pt-3 border-t border-white/20 flex flex-col">
-                        <span className="text-sm font-medium tracking-wider text-white">
-                          {t.ceoQuote.name}
-                        </span>
-                        <span className="text-xs uppercase tracking-[0.2em] text-zinc-300 font-light mt-0.5">
-                          {t.ceoQuote.role}
-                        </span>
-                      </div>
+                  {/* Dark gradient for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/40 to-transparent" />
+                  
+                  {/* Quote Content overlay */}
+                  <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end z-10">
+                    <div className="text-white text-3xl md:text-4xl mb-1 font-serif leading-none opacity-90">“</div>
+                    <p className="text-sm md:text-base font-light leading-relaxed text-white tracking-wide break-keep max-w-3xl">
+                      {t.ceoQuote.quote.replace(/“|”/g, '')}”
+                    </p>
+                    <div className="pt-4 mt-4 border-t border-white/20 flex flex-col max-w-3xl">
+                      <span className="text-sm font-light tracking-wider text-white">
+                        {t.ceoQuote.name}
+                      </span>
+                      <span className="text-xs text-zinc-300 font-light mt-1">
+                        {t.ceoQuote.role}
+                      </span>
                     </div>
                   </div>
                 </div>
