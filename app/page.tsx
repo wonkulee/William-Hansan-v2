@@ -1468,34 +1468,44 @@ export default function Home() {
           /* HOME PAGE VIEW */
           <>
             {/* 1. Homepage Hero Image */}
-            <section className="w-full h-[360px] sm:h-[440px] md:h-[500px] grid grid-cols-1 lg:grid-cols-12 border-b border-zinc-100 bg-[#FAFAFA]">
-              <div className="lg:col-span-5 xl:col-span-4 flex flex-col justify-center px-6 md:px-12 lg:px-16 py-10 md:py-16">
-                <div className="border-l-[3px] border-[#2A3B5C] pl-6 md:pl-8 py-2">
-                  <h1 className="text-4xl md:text-5xl lg:text-[56px] font-light tracking-tight text-zinc-900 leading-tight mb-4">
-                    {t.hero.title}
-                  </h1>
-                  <p className="text-sm md:text-base text-zinc-600 font-light tracking-wide leading-relaxed mb-10 max-w-md">
-                    {t.hero.subtitle}
-                  </p>
-                  <button
-                    onClick={() => setActiveTab('services')}
-                    className="inline-flex items-center gap-3 px-6 py-3 bg-[#0a192f] text-white hover:bg-zinc-800 transition-colors duration-300 text-xs uppercase tracking-[0.2em] font-light"
-                  >
-                    <span>Our Services</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+            <section className="relative w-full h-[360px] sm:h-[440px] md:h-[500px] border-b border-zinc-100 overflow-hidden bg-[#FAFAFA]">
+              <img
+                src="https://lh3.googleusercontent.com/d/1h6zj5YEY7GhtasK39iZBy0yyhSpovFT8"
+                alt="Seoul City Skyline"
+                className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[1.05]"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.src = "https://drive.google.com/uc?export=view&id=1h6zj5YEY7GhtasK39iZBy0yyhSpovFT8";
+                }}
+              />
+              
+              {/* Blur fade effect */}
+              <div 
+                className="absolute inset-0 backdrop-blur-md pointer-events-none" 
+                style={{ maskImage: 'linear-gradient(to right, black 20%, transparent 60%)', WebkitMaskImage: 'linear-gradient(to right, black 20%, transparent 60%)' }} 
+              />
+              
+              {/* White gradient for text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent pointer-events-none" />
+              
+              <div className="relative z-10 w-full h-full max-w-[1400px] mx-auto flex flex-col justify-center px-6 md:px-12 lg:px-16">
+                <div className="max-w-xl">
+                  <div className="border-l-[3px] border-[#2A3B5C] pl-6 md:pl-8 py-2">
+                    <h1 className="text-4xl md:text-5xl lg:text-[56px] font-light tracking-tight text-zinc-900 leading-tight mb-4">
+                      {t.hero.title}
+                    </h1>
+                    <p className="text-sm md:text-base text-zinc-800 font-light tracking-wide leading-relaxed mb-10 max-w-md">
+                      {t.hero.subtitle}
+                    </p>
+                    <button
+                      onClick={() => setActiveTab('services')}
+                      className="inline-flex items-center gap-3 px-6 py-3 bg-[#0a192f] text-white hover:bg-zinc-800 transition-colors duration-300 text-xs uppercase tracking-[0.2em] font-light"
+                    >
+                      <span>Our Services</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div className="hidden lg:block lg:col-span-7 xl:col-span-8 relative w-full h-full">
-                <img
-                  src="https://lh3.googleusercontent.com/d/1h6zj5YEY7GhtasK39iZBy0yyhSpovFT8"
-                  alt="Seoul City Skyline"
-                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[1.05]"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://drive.google.com/uc?export=view&id=1h6zj5YEY7GhtasK39iZBy0yyhSpovFT8";
-                  }}
-                />
               </div>
             </section>
 
@@ -1503,7 +1513,7 @@ export default function Home() {
             <section className="w-full bg-white border-b border-zinc-100 overflow-hidden">
               <div className="w-full grid grid-cols-1 lg:grid-cols-12 min-h-[320px]">
                 {/* Left side: Company Introduction */}
-                <div className="lg:col-span-6 xl:col-span-7 px-6 md:px-12 lg:px-16 py-10 md:py-16 flex flex-col justify-center text-left">
+                <div className="lg:col-span-7 xl:col-span-8 px-6 md:px-12 lg:px-16 py-10 md:py-16 flex flex-col justify-center text-left">
                   <div className="max-w-2xl">
                     <div className="space-y-6 text-zinc-600 leading-[1.85] text-sm md:text-base font-light break-keep">
                       <p>{t.about.p1}</p>
@@ -1513,7 +1523,7 @@ export default function Home() {
                 </div>
 
                 {/* Right side: CEO Photo and Quote Overlay */}
-                <div className="lg:col-span-6 xl:col-span-5 relative min-h-[260px] lg:min-h-full overflow-hidden bg-zinc-900">
+                <div className="lg:col-span-5 xl:col-span-4 relative min-h-[260px] lg:min-h-full overflow-hidden bg-zinc-900">
                   <img
                     src="https://lh3.googleusercontent.com/d/1QL4-mdRZDRBH37aSZdIQpyM1YSdK8rGw"
                     alt="Wonku William Lee - CEO"
