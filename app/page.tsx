@@ -1513,7 +1513,7 @@ export default function Home() {
             <section className="w-full bg-white border-b border-zinc-100 overflow-hidden">
               <div className="w-full grid grid-cols-1 lg:grid-cols-12 min-h-[320px]">
                 {/* Left side: Company Introduction */}
-                <div className="lg:col-span-7 xl:col-span-8 px-6 md:px-12 lg:px-16 py-10 md:py-16 flex flex-col justify-center text-left">
+                <div className="lg:col-span-6 xl:col-span-7 px-6 md:px-12 lg:px-16 py-10 md:py-16 flex flex-col justify-center text-left">
                   <div className="max-w-2xl">
                     <div className="space-y-6 text-zinc-600 leading-[1.85] text-sm md:text-base font-light break-keep">
                       <p>{t.about.p1}</p>
@@ -1523,7 +1523,7 @@ export default function Home() {
                 </div>
 
                 {/* Right side: CEO Photo and Quote Overlay */}
-                <div className="lg:col-span-5 xl:col-span-4 relative min-h-[260px] lg:min-h-full overflow-hidden bg-zinc-900">
+                <div className="lg:col-span-6 xl:col-span-5 relative min-h-[260px] lg:min-h-full overflow-hidden bg-zinc-900">
                   <img
                     src="https://lh3.googleusercontent.com/d/1QL4-mdRZDRBH37aSZdIQpyM1YSdK8rGw"
                     alt="Wonku William Lee - CEO"
