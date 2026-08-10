@@ -1374,7 +1374,7 @@ export default function Home() {
                   
                   <div className="pt-4">
                     <a 
-                      href="#" 
+                      href="https://www.linkedin.com/company/william-hansan/" 
                       className="inline-flex items-center gap-3 text-zinc-400 hover:text-zinc-900 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
