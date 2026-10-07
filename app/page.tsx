@@ -32,7 +32,7 @@ const TEAM_MEMBERS: TeamMember[] = [
       en: [
         'Chartered Financial Analyst (CFA)',
         'U.S. & Canada CPA',
-        'Canada Business Valuator (CBV)',
+        'Chartered Business Valuator (CBV)',
         'University of Waterloo, B.Math & B.Acc.',
         'University of Waterloo, M.Acc.',
         'University of Seoul, M.S. in Taxation',
